@@ -110,12 +110,8 @@ marc_DataClean_for_plot <- function(data_nor_logfc){
       }else{
         sub_1329$serial_number[sub_1329$gene == gene] <- rep(letters[1:10],length(unique(sub_1329$marker)))
       }
-      #对kpnb1做特殊处理，将两个一样的gRNA改成一样的名字
-      if(gene == "kpnb1"){
-        sub_1329$serial_number[sub_1329$serial_number == "c" & sub_1329$gene == "kpnb1"] <- "a"
-      }
     }
-  }
+  
   
   if(length(sub_other$Name) != 0){
       sub_other$type <- case_when(
